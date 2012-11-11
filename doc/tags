@@ -215,6 +215,8 @@ command-t-website	command-t.txt	/*command-t-website*
 command-t-wildignore	command-t.txt	/*command-t-wildignore*
 command-t.txt	command-t.txt	/*command-t.txt*
 compiler-ghc	haskellmode.txt	/*compiler-ghc*
+cs	surround.txt	/*cs*
+ds	surround.txt	/*ds*
 fugitive	fugitive.txt	/*fugitive*
 fugitive#statusline()	fugitive.txt	/*fugitive#statusline()*
 fugitive-:Gblame	fugitive.txt	/*fugitive-:Gblame*
@@ -310,6 +312,16 @@ haskellmode-settings-main	haskellmode.txt	/*haskellmode-settings-main*
 haskellmode-user-completion	haskellmode.txt	/*haskellmode-user-completion*
 haskellmode.txt	haskellmode.txt	/*haskellmode.txt*
 hpaste	haskellmode.txt	/*hpaste*
+i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
+i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
+surround	surround.txt	/*surround*
+surround-author	surround.txt	/*surround-author*
+surround-customizing	surround.txt	/*surround-customizing*
+surround-issues	surround.txt	/*surround-issues*
+surround-mappings	surround.txt	/*surround-mappings*
+surround-replacements	surround.txt	/*surround-replacements*
+surround-targets	surround.txt	/*surround-targets*
+surround.txt	surround.txt	/*surround.txt*
 taglist-commands	taglist.txt	/*taglist-commands*
 taglist-debug	taglist.txt	/*taglist-debug*
 taglist-extend	taglist.txt	/*taglist-extend*
@@ -334,6 +346,7 @@ unimpaired-lines	unimpaired.txt	/*unimpaired-lines*
 unimpaired-next	unimpaired.txt	/*unimpaired-next*
 unimpaired-todo	unimpaired.txt	/*unimpaired-todo*
 unimpaired.txt	unimpaired.txt	/*unimpaired.txt*
+vS	surround.txt	/*vS*
 v_[e	unimpaired.txt	/*v_[e*
 v_[u	unimpaired.txt	/*v_[u*
 v_[x	unimpaired.txt	/*v_[x*
@@ -342,3 +355,9 @@ v_]e	unimpaired.txt	/*v_]e*
 v_]u	unimpaired.txt	/*v_]u*
 v_]x	unimpaired.txt	/*v_]x*
 v_]y	unimpaired.txt	/*v_]y*
+vgS	surround.txt	/*vgS*
+vs	surround.txt	/*vs*
+yS	surround.txt	/*yS*
+ySS	surround.txt	/*ySS*
+ys	surround.txt	/*ys*
+yss	surround.txt	/*yss*

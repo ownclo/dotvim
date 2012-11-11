@@ -33,6 +33,7 @@ set wildignore-=hidden
 "call MapCR()
 map Q @q
 command! W :w
+command! Q :q
 
 :set t_Co=256 " 256 colors
 :set background=dark
@@ -49,6 +50,8 @@ au BufEnter *.hs compiler ghc
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+nnoremap <tab> <c-w>w
+nnoremap <S-tab> <c-w>W
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -101,7 +104,6 @@ set shiftwidth=4
 set expandtab
 set background=dark
 " autocmd BufEnter * lcd %:p:h
-inoremap ;l <ESC>
 
 autocmd FileType haskell nmap <C-c><C-r> :GhciRange<CR>
 autocmd FileType haskell vmap <C-c><C-r> :GhciRange<CR>
@@ -115,6 +117,5 @@ map ,, <C-^>
 map ,m :TlistToggle <cr>
 let mapleader = ","
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
-
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
