@@ -11,6 +11,7 @@ set showmatch
 set switchbuf=useopen
 set numberwidth=5
 "set hlsearch
+set ignorecase smartcase
 set showtabline=2
 set winwidth=79
 set scrolloff=2
@@ -31,6 +32,9 @@ set wildignore-=hidden
 "  nnoremap <cr> :nohlsearch<cr>
 "endfunction
 "call MapCR()
+
+let mapleader=","
+
 map Q @q
 command! W :w
 command! Q :q
@@ -45,6 +49,22 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
+
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
 
 au BufEnter *.hs compiler ghc
 autocmd BufReadPost fugitive://* set bufhidden=delete
