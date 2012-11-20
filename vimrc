@@ -216,7 +216,8 @@ set expandtab
 set background=dark
 " autocmd BufEnter * lcd %:p:h
 
-autocmd FileType ruby,haml,eruby,html,javascript,sass,cucumber,coffee set ai sw=2 sts=2 et
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 sts=2 expandtab
+autocmd FileType ruby,haml,eruby,html,javascript,sass,cucumber set ai sw=2 sts=2 et
 autocmd FileType haskell nmap <C-c><C-r> :GhciRange<CR>
 autocmd FileType haskell vmap <C-c><C-r> :GhciRange<CR>
 autocmd FileType haskell nmap <C-c><C-l> :GhciFile<CR>
