@@ -78,7 +78,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 " Insert a hash rocket with <c-l>
-imap <c-l> <space>-><space>
+imap <c-l> <space>-><cr>
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
@@ -222,6 +222,9 @@ autocmd FileType haskell nmap <C-c><C-r> :GhciRange<CR>
 autocmd FileType haskell vmap <C-c><C-r> :GhciRange<CR>
 autocmd FileType haskell nmap <C-c><C-l> :GhciFile<CR>
 autocmd FileType haskell nmap <C-c><C-x> :GhciReload<CR>
+
+au BufRead,BufNewFile *.tex set filetype=tex
+autocmd FileType tex set wrap linebreak
 
 au BufRead,BufNewFile *.pic set filetype=pic
 autocmd FileType pic map ,l :w \|!pic2pdf % && xdg-open %:r.pdf <cr>
