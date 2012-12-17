@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/ownclo'
 let g:netrw_dirhist_2='/home/ownclo/workspace/git/git_remote_helpers'
+let g:netrw_dirhist_3='/home/ownclo/workspace/pomonotes/tomatoes/cookbooks/vim'
+let g:netrw_dirhist_4='/home/ownclo/.vagrant.d'
