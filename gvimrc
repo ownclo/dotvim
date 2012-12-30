@@ -40,9 +40,11 @@ map Q @q
 command! W :w
 command! Q :q
 
-:set t_Co=256 " 256 colors
-:set background=dark
-colorscheme grb256
+":set t_Co=256 " 256 colors
+colorscheme solarized
+set background=light
+set guifont=Ubuntu\ Mono\ 13
+
 set cursorline
 :hi CursorLine guifg=none guibg=none term=none cterm=none ctermbg=236 ctermfg=none
 
@@ -189,7 +191,7 @@ set incsearch
 set guioptions-=T
 syntax on
 
-function InsertTabWrapper()
+function! InsertTabWrapper()
  let col = col('.') - 1
  if !col || getline('.')[col - 1] !~ '\k'
  return "\<tab>"
@@ -207,7 +209,6 @@ set complete+=t
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set background=dark
 " autocmd BufEnter * lcd %:p:h
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 sts=2 expandtab
