@@ -40,9 +40,13 @@ map Q @q
 command! W :w
 command! Q :q
 
-:set t_Co=256 " 256 colors
-:set background=dark
-colorscheme grb256
+":set t_Co=256 " 256 colors
+":set background=dark
+"colorscheme grb256
+set t_Co=16
+set background=light
+colorscheme solarized
+
 set cursorline
 :hi CursorLine guifg=none guibg=none term=none cterm=none ctermbg=236 ctermfg=none
 
@@ -207,7 +211,7 @@ set complete+=t
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set background=dark
+"set background=dark
 " autocmd BufEnter * lcd %:p:h
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 sts=2 expandtab
