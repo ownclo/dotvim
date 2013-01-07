@@ -193,16 +193,6 @@ set incsearch
 set guioptions-=T
 syntax on
 
-function InsertTabWrapper()
- let col = col('.') - 1
- if !col || getline('.')[col - 1] !~ '\k'
- return "\<tab>"
- else
- return "\<c-p>"
- endif
-endfunction
-imap <tab> <c-r>=InsertTabWrapper()<cr>
-
 set complete=""
 set complete+=.
 set complete+=k
