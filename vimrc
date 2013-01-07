@@ -29,6 +29,9 @@ set wildmode=longest,list
 set wildmenu
 set wildignore-=hidden
 
+" highlights trailling whitespaces
+set list listchars=trail:·
+
 "function! MapCR()
 "  nnoremap <cr> :nohlsearch<cr>
 "endfunction
