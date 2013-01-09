@@ -227,14 +227,7 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-" maps escape characters to their Alt-equivalents
-" then disables it by setting timeoutlength=0
-" nobody needs escape characters anyway
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
-set timeout ttimeoutlen=0
+" disables recognition of escape sequences in insert
+" mode
+set noesckeys
+set timeoutlen=5
