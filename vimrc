@@ -230,4 +230,3 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " disables recognition of escape sequences in insert
 " mode
 set noesckeys
-set timeoutlen=5
