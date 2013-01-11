@@ -30,7 +30,7 @@ set wildmenu
 set wildignore-=hidden
 
 " highlights trailling whitespaces
-set list listchars=trail:·
+set list listchars=tab:>-,trail:·
 
 "function! MapCR()
 "  nnoremap <cr> :nohlsearch<cr>
