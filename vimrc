@@ -29,6 +29,15 @@ set wildmode=longest,list
 set wildmenu
 set wildignore-=hidden
 
+if version >= 730
+    set history=64
+    set undolevels=128
+    set undodir=~/.vim/undodir/
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+
 " highlights trailling whitespaces
 set list listchars=tab:>-,trail:·
 
@@ -43,12 +52,12 @@ map Q @q
 command! W :w
 command! Q :q
 
-":set t_Co=256 " 256 colors
-":set background=dark
-"colorscheme grb256
-set t_Co=16
-set background=light
-colorscheme solarized
+:set t_Co=256 " 256 colors
+:set background=dark
+colorscheme grb256
+"set t_Co=16
+"set background=light
+"colorscheme solarized
 
 set cursorline
 :hi CursorLine guifg=none guibg=none term=none cterm=none ctermbg=236 ctermfg=none
@@ -194,7 +203,6 @@ set autowrite
 set smartindent
 set incsearch
 set guioptions-=T
-syntax on
 
 set complete=""
 set complete+=.
