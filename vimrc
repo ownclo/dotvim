@@ -14,7 +14,7 @@ set numberwidth=5
 "set hlsearch
 set ignorecase smartcase
 set showtabline=2
-set winwidth=79
+"set winwidth=79
 set scrolloff=2
 set cmdheight=2
 set backup
@@ -29,17 +29,16 @@ set wildmode=longest,list
 set wildmenu
 set wildignore-=hidden
 
-if version >= 730
-    set history=64
-    set undolevels=128
-    set undodir=~/.vim/undodir/
-    set undofile
-    set undolevels=1000
-    set undoreload=10000
-endif
+" PERMANENT UNDO HISTORY
+set history=64
+set undolevels=128
+set undodir=~/.vim/undodir/
+set undofile
+set undolevels=1000
+set undoreload=10000
 
 " highlights trailling whitespaces
-set list listchars=tab:>-,trail:·
+"set list listchars=tab:>-,trail:·
 
 "function! MapCR()
 "  nnoremap <cr> :nohlsearch<cr>
@@ -61,11 +60,14 @@ colorscheme grb256
 
 set cursorline
 :hi CursorLine guifg=none guibg=none term=none cterm=none ctermbg=236 ctermfg=none
+set nocursorline
 
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
+let g:Tex_ViewRule_pdf = 'evince'
+let g:Tex_ViewRule_dvi = 'evince'
 
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -238,3 +240,22 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " disables recognition of escape sequences in insert
 " mode
 set noesckeys
+
+"" CLANG_COMPLETE OPTIONS
+"let g:clang_close_preview=1
+"set conceallevel=2
+"set concealcursor=vin
+"let g:clang_snippets=1
+"let g:clang_conceal_snippets=1
+"" The single one that works with clang_complete
+"let g:clang_snippets_engine='clang_complete'
+
+"" Complete options (disable preview scratch window, longest removed to aways
+"" show menu)
+"set completeopt=menu,menuone
+
+"" Limit popup menu height
+"set pumheight=20
+
+"" SuperTab completion fall-back 
+"let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
