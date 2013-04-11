@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 set t_ti= t_te=
 "color darkblue
 set keymap=russian-jcukenwin
@@ -240,6 +242,11 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " disables recognition of escape sequences in insert
 " mode
 set noesckeys
+
+"" PROTODEF OPTIONS
+au! BufEnter *.cpp let b:fswitch = 'hpp,h' | let b:fswitchlocs = '../inc,.'
+let g:protodefctagsexe = 'ctags-exuberant'
+let g:protodefprotogetter = '~/.vim/bundle/ProtoDef/pullproto.pl'
 
 "" CLANG_COMPLETE OPTIONS
 "let g:clang_close_preview=1
