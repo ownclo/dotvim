@@ -11,7 +11,7 @@ hi VertSplit ctermbg=black ctermfg=lightgrey
 hi LineNr ctermfg=darkgray
 
 """ Identifiers looks ugly by default.
-hi Identifier guifg=NONE guibg=#121212 gui=NONE ctermfg=lightblue ctermbg=NONE cterm=NONE
+hi Identifier guifg=NONE guibg=#121212 gui=NONE ctermfg=lightblue ctermbg=NONE cterm=bold
 
 hi CursorLine  guifg=NONE     guibg=#121212  gui=NONE       ctermfg=NONE    ctermbg=234
 hi Function    guifg=#FFD2A7  guibg=NONE     gui=NONE       ctermfg=yellow  ctermbg=NONE  cterm=NONE
