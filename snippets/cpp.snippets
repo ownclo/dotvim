@@ -20,15 +20,21 @@ snippet ns
 	} /* $1 */
 # Class
 snippet cl
-	class ${1:`Filename('$1_t', 'name')`} {
+	class ${1:`Filename('$1', 'name')`} {
+	private:
+		${3:/* data */}
+
 	public:
 		$1 (${2:arguments});
 		virtual ~$1 ();
-
-	private:
-		${3:/* data */}
 	};
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
+	}
+# GoogleTest snippet
+snippet test
+	TEST(${1:`Filename('$1', 'name')`}, ${2:test_case})
+	{
+		${3:EXPECT_EQ(true, true); // wiring up}
 	}
