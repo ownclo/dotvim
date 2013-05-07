@@ -266,3 +266,7 @@ let g:protodefprotogetter = '~/.vim/bundle/ProtoDef/pullproto.pl'
 
 "" SuperTab completion fall-back 
 "let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
+
+" Nobody wants to passing templates
+" automatically.
+let g:templates_no_autocmd = 1
