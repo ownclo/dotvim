@@ -502,3 +502,15 @@ snippet tas
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
 	end
+
+# RSPEC SNIPPETS
+snippet ep
+	expect(${1:1}).to eq ${2:1}
+snippet it
+	it "${1}" do
+	  ${2}
+	end
+snippet desc
+	describe ${1:"feature"} do
+	  ${2}
+	end
