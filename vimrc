@@ -34,7 +34,7 @@ set wildignore-=hidden
 " PERMANENT UNDO HISTORY
 set history=64
 set undolevels=128
-set undodir=~/.vim/undodir/
+set undodir=/home/ownclo/.vim/undodir/
 set undofile
 set undolevels=1000
 set undoreload=10000
@@ -232,6 +232,9 @@ autocmd FileType tex set wrap linebreak
 
 au BufRead,BufNewFile *.pic set filetype=pic
 autocmd FileType pic map ,l :w \|!pic2pdf % && xdg-open %:r.pdf <cr>
+
+au BufRead,BufNewFile *.gp set filetype=gnuplot
+autocmd FileType gnuplot map ,p :update\|!gnuplot %<cr>
 
 map ,, <C-^>
 map ,m :TlistToggle <cr>
