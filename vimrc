@@ -250,7 +250,7 @@ set noesckeys
 "" PROTODEF OPTIONS
 au! BufEnter *.cpp let b:fswitch = 'hpp,h' | let b:fswitchlocs = '../inc,.'
 let g:protodefctagsexe = 'ctags-exuberant'
-let g:protodefprotogetter = '~/.vim/bundle/ProtoDef/pullproto.pl'
+let g:protodefprotogetter = '/home/ownclo/.vim/bundle/vim-protodef/pullproto.pl'
 
 "" CLANG_COMPLETE OPTIONS
 "let g:clang_close_preview=1
