@@ -53,10 +53,10 @@ map Q @q
 command! W :w
 command! Q :q
 
-:set t_Co=256 " 256 colors
+":set t_Co=256 " 256 colors
 :set background=dark
 colorscheme grb256
-"set t_Co=16
+set t_Co=16
 "set background=light
 "colorscheme solarized
 
