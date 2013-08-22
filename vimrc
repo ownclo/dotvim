@@ -31,6 +31,11 @@ set wildmode=longest,list
 set wildmenu
 set wildignore-=hidden
 
+" FILE ENCODINGS
+set termencoding=utf-8
+set fileencodings=utf8,cp1251
+set encoding=utf8
+
 " PERMANENT UNDO HISTORY
 set history=64
 set undolevels=128
