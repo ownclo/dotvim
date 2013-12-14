@@ -92,7 +92,6 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-au BufEnter *.hs compiler ghc
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
@@ -205,8 +204,6 @@ map <C-g><C-t> :Git tr<cr>
 map <C-g><C-d> :Gdiff<cr>
 map Q @q
 
-let g:haddock_browser = "/usr/bin/google-chrome"
-let g:ghc = "/usr/bin/ghc"
 set nu
 set autoindent
 set autowrite
@@ -227,10 +224,17 @@ set expandtab
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 sts=2 expandtab
 autocmd FileType ruby,haml,eruby,html,javascript,sass,cucumber set ai sw=2 sts=2 et
-autocmd FileType haskell nmap <C-c><C-r> :GhciRange<CR>
-autocmd FileType haskell vmap <C-c><C-r> :GhciRange<CR>
-autocmd FileType haskell nmap <C-c><C-l> :GhciFile<CR>
-autocmd FileType haskell nmap <C-c><C-x> :GhciReload<CR>
+
+"" HASKELL FEATURES
+if isdirectory(".hsenv")
+    let g:hdevtools_options = '-g-package-conf.hsenv/ghc_pkg_db'
+endif
+
+let g:haskell_conceal = 0
+autocmd FileType haskell normal zR
+autocmd FileType haskell nmap <leader>w :HdevtoolsType<CR>
+autocmd FileType haskell nmap <silent> <leader>d :HdevtoolsClear<CR>
+let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 
 au BufRead,BufNewFile *.tex set filetype=tex
 autocmd FileType tex set wrap linebreak

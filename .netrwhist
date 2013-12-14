@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/ownclo'
-let g:netrw_dirhist_2='/home/ownclo/workspace/git/git_remote_helpers'
-let g:netrw_dirhist_3='/home/ownclo/workspace/pomonotes/tomatoes/cookbooks/vim'
-let g:netrw_dirhist_4='/home/ownclo/.vagrant.d'
-let g:netrw_dirhist_5='/home/ownclo/learnspace/labs/troff/lib/tcm'
-let g:netrw_dirhist_6='/home/ownclo/sources/pandoc/src/Text/Pandoc'
-let g:netrw_dirhist_7='/home/ownclo/workspace/cpp/ya/mutex_problems.cpp'
-let g:netrw_dirhist_8='/home/ownclo/learnspace/labs/macro/fixture'
-let g:netrw_dirhist_9='/home/ownclo/learnspace/workbooks/codes'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/ownclo/.vim/bundle'
