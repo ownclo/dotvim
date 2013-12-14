@@ -31,6 +31,9 @@ set wildmode=longest,list
 set wildmenu
 set wildignore-=hidden
 
+" USE SYSTEM CLIPBOARD AS DEFAULT REGISTER
+set clipboard=unnamedplus
+
 " FILE ENCODINGS
 set termencoding=utf-8
 set fileencodings=utf8,cp1251
@@ -246,7 +249,17 @@ au BufRead,BufNewFile *.gp set filetype=gnuplot
 autocmd FileType gnuplot map ,p :update\|!gnuplot %<cr>
 
 map ,, <C-^>
-map ,m :TlistToggle <cr>
+
+" Search in git for current word.
+" Useful when reverse-engineering.
+"   - In normal mode, search for current word.
+"   - In visual mode, search for selected text.
+nnoremap ,s :!git grep <C-R><C-W><CR>
+vnoremap ,s y\|:!git grep <C-R>"<CR>
+" Search in current file for selected text.
+vnoremap g/ y/<C-R>"<CR>
+
+" map ,m :TlistToggle <cr> " Do not work well.
 let mapleader = ","
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
