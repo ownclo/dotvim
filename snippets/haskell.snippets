@@ -1,0 +1,27 @@
+snippet lan
+	{-# LANGUAGE ${1:OverloadedStrings} #-}
+	${2}
+snippet iq
+	import qualified ${1:Data.Map} as ${2:M}
+snippet imp
+	import ${1:Control.Monad}
+snippet impe
+	import ${1:Control.Monad}( ${2:mapM_} )
+snippet main
+	main :: IO ()
+	main = ${1:putStrLn "Hello, world!"}
+snippet mod
+	module ${1:`Filename("$1")`} where
+	${2}
+# Expanded version of module declaration
+snippet mode
+	module ${1:`Filename("$1")`} (
+		  ${2:yourStuff}
+		) where
+	${3}
+snippet data
+	data ${1:DataType} = $1 {
+			${2:field} :: ${3:Int}
+		}${4}
+snippet und
+	undefined

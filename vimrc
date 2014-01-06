@@ -62,11 +62,11 @@ command! W :w
 command! Q :q
 
 ":set t_Co=256 " 256 colors
-:set background=dark
-colorscheme grb256
+":set background=dark
+"colorscheme grb256
 set t_Co=16
-"set background=light
-"colorscheme solarized
+set background=dark
+colorscheme solarized
 
 set cursorline
 :hi CursorLine guifg=none guibg=none term=none cterm=none ctermbg=236 ctermfg=none
@@ -233,7 +233,7 @@ if isdirectory(".hsenv")
     let g:hdevtools_options = '-g-package-conf.hsenv/ghc_pkg_db'
 endif
 
-let g:haskell_conceal = 0
+"let g:haskell_conceal = 3
 autocmd FileType haskell normal zR
 autocmd FileType haskell nmap <leader>w :HdevtoolsType<CR>
 autocmd FileType haskell nmap <silent> <leader>d :HdevtoolsClear<CR>
