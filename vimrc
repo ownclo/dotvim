@@ -104,8 +104,11 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
 " Insert a hash rocket with <c-l>
-imap <c-l> ->
+imap <c-l> <Space>-><Space>
+imap <c-b> <Space><-<Space>
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 "imap <c-c> <esc>
 
@@ -230,7 +233,12 @@ autocmd FileType ruby,haml,eruby,html,javascript,sass,cucumber set ai sw=2 sts=2
 
 "" HASKELL FEATURES
 if isdirectory(".hsenv")
-    let g:hdevtools_options = '-g-package-conf.hsenv/ghc_pkg_db'
+    let g:hdevtools_options = '-g-isrc -g-package-conf.hsenv/ghc_pkg_db'
+endif
+
+"" XXX: This is a dirty hack. Beware!
+if isdirectory(".cabal-sandbox")
+    let g:hdevtools_options = '-g-isrc -g-package-conf.cabal-sandbox/x86_64-linux-ghc-7.4.1-packages.conf.d'
 endif
 
 "let g:haskell_conceal = 3
