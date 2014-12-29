@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-set t_ti= t_te=
+"set t_ti= t_te=
 "color darkblue
 set keymap=russian-jcukenwin
 set iminsert=0
@@ -106,7 +106,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " Insert a hash rocket with <c-l>
-imap <c-l> <Space>-><Space>
+imap <c-l> <Space>-><CR>
 imap <c-b> <Space><-<Space>
 
 " Can't be bothered to understand ESC vs <c-c> in insert mode
@@ -228,6 +228,8 @@ set expandtab
 "set background=dark
 " autocmd BufEnter * lcd %:p:h
 
+let g:SuperTabDefaultCompletionType = "context"
+
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 sts=2 expandtab
 autocmd FileType ruby,haml,eruby,html,javascript,sass,cucumber set ai sw=2 sts=2 et
 
@@ -262,8 +264,8 @@ map ,, <C-^>
 " Useful when reverse-engineering.
 "   - In normal mode, search for current word.
 "   - In visual mode, search for selected text.
-nnoremap ,s :!git grep <C-R><C-W><CR>
-vnoremap ,s y\|:!git grep <C-R>"<CR>
+nnoremap ,s :Ggrep <C-R><C-W><CR>
+vnoremap ,s y\|:Ggrep <C-R>"<CR>
 " Search in current file for selected text.
 vnoremap g/ y/<C-R>"<CR>
 
